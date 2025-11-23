@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://wduos1j2yq46"]
+[gd_scene load_steps=2 format=3 uid="uid://wduos1j2yq46"]
+
+[ext_resource type="PackedScene" uid="uid://u6loni7haehw" path="res://Features/UI/MenuButton/MenuButton.tscn" id="1_ad4e6"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +9,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContent" type="Control" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+
+[node name="MenuButtonContainer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuButton1" parent="MainContainer/MenuButtonContainer" instance=ExtResource("1_ad4e6")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shop"
+
+[node name="MenuButton2" parent="MainContainer/MenuButtonContainer" instance=ExtResource("1_ad4e6")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Play"
+
+[node name="MenuButton3" parent="MainContainer/MenuButtonContainer" instance=ExtResource("1_ad4e6")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Items"
+
+[node name="MenuButton4" parent="MainContainer/MenuButtonContainer" instance=ExtResource("1_ad4e6")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Beasts"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://e72qylhdgujn"]
+
+[ext_resource type="Script" uid="uid://dqyo51ousakyr" path="res://Features/UI/TouchScreenForControl/touch_screen_for_control.gd" id="1_oj7yr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhs5n"]
+
+[node name="TouchScreenForControl" type="TouchScreenButton"]
+shape = SubResource("RectangleShape2D_mhs5n")
+script = ExtResource("1_oj7yr")

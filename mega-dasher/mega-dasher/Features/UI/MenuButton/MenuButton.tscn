@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://u6loni7haehw"]
+
+[ext_resource type="Script" uid="uid://b1u8pv7c3ywpy" path="res://Features/UI/MenuButton/menu_button.gd" id="1_bplnp"]
+[ext_resource type="Texture2D" uid="uid://jr3tvr4j0vg7" path="res://Features/UI/MenuButton/button-1466.png" id="1_el36g"]
+[ext_resource type="PackedScene" uid="uid://c2b0o66lkge6k" path="res://Features/UI/Label/Label.tscn" id="3_iseq6"]
+[ext_resource type="PackedScene" uid="uid://e72qylhdgujn" path="res://Features/UI/TouchScreenForControl/TouchScreenForControl.tscn" id="4_qikfb"]
+
+[node name="MenuButton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bplnp")
+
+[node name="BackgroundSprite" type="NinePatchRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_el36g")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label" parent="." instance=ExtResource("3_iseq6")]
+layout_mode = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_font_sizes/font_size = 8
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenForControl" parent="." instance=ExtResource("4_qikfb")]
+
+[connection signal="pressed" from="TouchScreenForControl" to="." method="_on_touch_screen_for_control_pressed"]
